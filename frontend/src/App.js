@@ -57,8 +57,7 @@ function App() {
 const handleSubmit=()=>{
   alert("successfully registered");
   alert("you are redirecting to main page.....")
-  setTimeout(function() {
-    location.reload();
+  setTimeout(function() { 
     window.location.replace('https://ecellvssut.tech/');
   }, 1000);
 }
