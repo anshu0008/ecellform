@@ -22,7 +22,7 @@ function App() {
     //   }
     // })
     // console.log(response);
-    axios.post('http://localhost:8000/api/form', details)
+    axios.post('https://form-qohm.onrender.com/api/form', details)
     .then((res) => {
       return res.data
     }).then(data => {
@@ -48,7 +48,7 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/form')
+    axios.get('https://form-qohm.onrender.com/api/form')
       .then(res => res.data)
       .then(data => {
         console.log(data)
