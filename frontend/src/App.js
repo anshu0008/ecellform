@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useHistory } from "react-router-dom";
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,12 +8,18 @@ function App() {
   const [branch, setBranch] = useState("");
   const [registrationNumber, setRegistrationNumber] = useState("");
   const [domain, setDomain] = useState("");
-
-
+  const history = useHistory();
   const handlClick = async (e) => {
     e.preventDefault();
-    const details = { name, email, whatsappNumber, branch, registrationNumber, domain };
-    
+    const details = {
+      name,
+      email,
+      whatsappNumber,
+      branch,
+      registrationNumber,
+      domain,
+    };
+
     // const response = await fetch('http://localhost:8000/api/form', {
     //   method: 'POST',
     //   body: JSON.stringify(details),
@@ -22,48 +28,59 @@ function App() {
     //   }
     // })
     // console.log(response);
-    axios.post('https://form-qohm.onrender.com/api/form', details)
-    .then((res) => {
-      return res.data
-    }).then(data => {
-      console.log(data)
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  //   const json = await response.json();
-  //   if (!response.ok) {
-  //     console.log(json.error)
-  //   }
-  //   if (response.ok) {
-  //     setName('')
-  //     setEmail('')
-  //     setWhatsapp('')
-  //     setBranch("");
-  //     setRegistration("")
-  //     setDomain("")
-  //     console.log('new details added:', json)
-  //     window.location.reload();
-  //  }
-  }
-
+    axios
+      .post("https://form-qohm.onrender.com/api/form", details)
+      .then((res) => {
+        return res.data;
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    //   const json = await response.json();
+    //   if (!response.ok) {
+    //     console.log(json.error)
+    //   }
+    //   if (response.ok) {
+    //     setName('')
+    //     setEmail('')
+    //     setWhatsapp('')
+    //     setBranch("");
+    //     setRegistration("")
+    //     setDomain("")
+    //     console.log('new details added:', json)
+    //     window.location.reload();
+    //  }
+  };
+const handleSubmit=()=>{
+  alert("successfully registered");
+  alert("you are redirecting to main page.....")
+  setTimeout(function() {
+    location.reload();
+    window.location.replace('https://ecellvssut.tech/');
+  }, 1000);
+}
   useEffect(() => {
-    axios.get('https://form-qohm.onrender.com/api/form')
-      .then(res => res.data)
-      .then(data => {
-        console.log(data)
+    axios
+      .get("https://form-qohm.onrender.com/api/form")
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data);
       })
-      .catch(err => {
-        console.log(err.response.data)
-      })
-  }, [])
-
-
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  }, []);
   return (
+
+
+
     <div className="container">
       <div className="title">Registration</div>
       <div className="content">
-        <form action="/" method="POST" onSubmit={handlClick} >
+        <form action="/" method="POST" onSubmit={handlClick}>
           <div className="user-details">
             <div className="input-box">
               <span className="details">Full Name</span>
@@ -127,18 +144,8 @@ function App() {
               setDomain(e.target.value);
             }}
           >
-            <input 
-            type="radio" 
-            name="Domain" 
-            id="dot-1" 
-            value="Tech" 
-            />
-            <input 
-            type="radio" 
-            name="Domain" 
-            id="dot-2" 
-            value="Social Media" 
-            />
+            <input type="radio" name="Domain" id="dot-1" value="Tech" />
+            <input type="radio" name="Domain" id="dot-2" value="Social Media" />
             <input
               type="radio"
               name="Domain"
@@ -193,8 +200,9 @@ function App() {
               </label>
             </div>
           </div>
-          <div className="button">
-            <input type="submit" value="Register"  />
+          <div className="button" onClick={handleSubmit} >
+            <input type="submit" value="Register" />
+            
           </div>
         </form>
       </div>
