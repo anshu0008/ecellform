@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital@1&family=Poppins&family=Roboto:wght@700&display=swap');
+.section{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: url("https://i.stack.imgur.com/Rpbjm.png") top center;
+  background-size: cover;
+  color: white;
+}
+.sec{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background: url("https://img.freepik.com/premium-vector/seamless-background-pattern-from-geometric-shapes-pattern-is-evenly-filled-with-black-circles-white-background-vector-design_116849-755.jpg?w=360") top center;
+  background-size: cover;
+ 
+
+  color: black;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-family: 'Poppins', sans-serif;
+  /* padding: 20px; */
+  padding-top: 200px;
+  gap: 16px;
+  /* flex-wrap: wrap;
+  min-width: 100%; */
+  /* margin-left: 10px; */
+  /* margin-right: ; */
+}
+.text >span{
+ margin: 0;
+ font-size: 0.75rem;
+ line-height: 2.66;
+ text-transform: uppercase;
+ align-items: center;
+ font-family: 'Roboto', sans-serif;
+}
+.text >h1{
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 1.167;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+}
+.text >h2{
+  margin: 0;
+ font-size: 0.75rem;
+ line-height: 2.66;
+ text-transform: uppercase;
+ align-items: center;
+ font-family: 'Roboto', sans-serif;
+}
+.text >p{
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Bona Nova', serif;
+}
+/* .anim{
+  position: absolute;
+  bottom: 32;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.a{
+  width:35px;
+   height:64px ;
+  border:4px;
+  display:flex;
+  justify-content:center; align-items:start;
+   padding:2px;
+}
+.b{
+  width:3px;
+   height:3px;
+   margin-bottom: 2px;
+} */
+@media(max-width: 650px) {
+  .text >h3{
+    font-size: 4.7129rem;
+  }
+}
+@media(max-width: 427px) {
+  .section{
+    margin-bottom: 100px;
+  }
+  .sec{
+    margin-bottom: 100px;
+  }
+  .text >h3{
+    font-size: 3.7129rem;
+  }
+}
