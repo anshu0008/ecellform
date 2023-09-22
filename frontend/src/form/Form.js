@@ -9,12 +9,11 @@ const Form=(props)=> {
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [branch, setBranch] = useState("");
   const [registrationNumber, setRegistrationNumber] = useState("");
-  const [domain, setDomain] = useState("");
 
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const details = { name, email, whatsappNumber, branch, registrationNumber, domain };
+    const details = { name, email, whatsappNumber, branch, registrationNumber };
     axios.post('https://form-qohm.onrender.com/api/form', details)
     .then((res) => {
       return res.data
@@ -99,90 +98,6 @@ const Form=(props)=> {
                   setBranch(e.target.value);
                 }}
               />
-            </div>
-          </div>
-          <div
-            className="gender-details"
-            onChange={(e) => {
-              setDomain(e.target.value);
-            }}
-          >
-            <input 
-            type="radio" 
-            name="Domain" 
-            id="dot-1" 
-            value="Tech" 
-            />
-            <input 
-            type="radio" 
-            name="Domain" 
-            id="dot-2" 
-            value="Social Media" 
-            />
-            <input
-              type="radio"
-              name="Domain"
-              id="dot-3"
-              value="Public Relations"
-            />
-            <input
-              type="radio"
-              name="Domain"
-              id="dot-4"
-              value="Video Editing"
-            />
-            <input
-              type="radio"
-              name="Domain"
-              id="dot-5"
-              value="Marketing and Sponsors"
-            />
-            <input
-              type="radio"
-              name="Domain"
-              id="dot-6"
-              value="Graphics Design"
-            />
-            <input
-              type="radio"
-              name="Domain"
-              id="dot-7"
-              value="Content Writing"
-            />
-             
-            <span className="gender-title">Domain</span>
-            <div className="category">
-              <label for="dot-1">
-                <span className="dot one"></span>
-                <span className="gender">Tech</span>
-              </label>
-              <label for="dot-2">
-                <span className="dot two"></span>
-                <span className="gender">Social Media</span>
-              </label>
-              <label for="dot-3">
-                <span className="dot three"></span>
-                <span className="gender">Public Relations</span>
-              </label>
-              <label for="dot-4">
-                <span className="dot four"></span>
-                <span className="gender">Video Editing</span>
-              </label>
-            </div>
-            <div className="category">
-              <label for="dot-5">
-                <span className="dot five"></span>
-                <span className="gender">Marketing and Sponsors</span>
-              </label>
-              <label for="dot-6">
-                <span className="dot six"></span>
-                <span className="gender">Graphics Design</span>
-              </label>
-              <label for="dot-7">
-                <span className="dot seven"></span>
-                <span className="gender">Content Writing</span>
-              </label>
-             
             </div>
           </div>
           <div className="button">

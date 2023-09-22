@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const formModel = require("../Model/model");
 
 const formData_add = async (req, res) => {
-  let { name, email, registrationNumber, whatsappNumber, domain, branch } =
+  let { name, email, registrationNumber, whatsappNumber, branch } =
     req.body;
     console.log(req.body);
   try {
-    console.log(domain);
     console.log(registrationNumber);
     whatsappNumber=parseInt(whatsappNumber);
     console.log(registrationNumber);
@@ -15,7 +14,6 @@ const formData_add = async (req, res) => {
       email,
       registrationNumber,
       whatsappNumber,
-      domain,
       branch,
     });
     res.status(200).json(details);

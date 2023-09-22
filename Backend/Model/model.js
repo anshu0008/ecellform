@@ -14,10 +14,10 @@ const modelForm=new Schema({
         type:Number,
         required:true
     },
-    domain:{
-        type:String,
-        required:true
-    },
+    // domain:{
+    //     type:String,
+    //     required:true
+    // },
     whatsappNumber:{
         type:Number,
         required:true

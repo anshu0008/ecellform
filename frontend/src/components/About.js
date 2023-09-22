@@ -5,29 +5,11 @@ export default function About(props) {
   return (
     <section className={props.darkMode?'section':'sec'}>
       <div className="text">
-      <span>Welcome To</span>
-      <h1>Induction 2023</h1>
-      <h2>Why to Join</h2>
-      <p>"Your most loathed present will someday become the moment that changed you.All you have to do is believe and start working on things that people think are impossible."</p>
+      <h1>STARTUP SYNERGY: Ideas into Entrepreneurial Empires</h1>
+     
+      <p>"The event "STARTUP SYNERGY: Ideas into Entrepreneurial Empires" , partnership with Scomm Sambalpur, will be on 24th of September from 9am to 2pm. It includes a entrepreneurial talkshow and a panel discussion. Along with the start-ups of our college, other colleges like iim sambalpur, sambalpur university, their start-ups are also invited to attend the event."</p>
       </div>
-{/* 
-      <div className="anim">
-        <a href="#about">
-          <div className="a">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="b"
-            />
-          </div>
-        </a>
-      </div> */}
+
     </section>
     
   )
