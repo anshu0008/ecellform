@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import './Form.css'
-
+// import { useNavigate } from 'react-router-dom';
 
 const Form=(props)=> {
+  // const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
@@ -18,23 +20,18 @@ const Form=(props)=> {
     .then((res) => {
       return res.data
     }).then(data => {
-      console.log(data)
+      console.log(data);
+
     })
     .catch((err) => {
       console.log(err);
     })
+
+
+    window.location.href='https://ecellvssut.tech/';
   }
 
-  useEffect(() => {
-    axios.get('https://form-qohm.onrender.com/api/form')
-      .then(res => res.data)
-      .then(data => {
-        console.log(data)
-      })
-      .catch(err => {
-        console.log(err.response.data)
-      })
-  }, [])
+
 
 
   return (
